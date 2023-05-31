@@ -1,0 +1,44 @@
+
+<table class="w-100 m-3">
+
+  <tr>
+    <th>product id</th>
+    <th>product name</th>
+    <th>Image</th>
+    <th>price</th>
+    <th>Quantity</th>
+    <th>details</th>
+    <th>update</th>
+    <th>delete</th>
+
+
+  </tr>
+  <!-- <div class="col-lg-3 sm-8   m-3 p-0  justify-content-between" id="cardstyle" > -->
+
+  <tr *ngFor="let c of filteredProducts" class="bg-primary" style="border:1px solid black ;">
+    <td>{{c.id}}</td>
+    <td>
+      <h2 class="d-flex justify-content-center" style="font-size: 1.5vw;">{{c.Name |uppercase}}</h2>
+    </td>
+    <td> <img [src]="c.Img" class="m-1" width="100px" height="100px"></td>
+    <td>
+      <h5 style=" font-size: 1vw;">{{c.Price|currency:'EGP'}}</h5>
+    </td>
+    <td>
+      <h5 style=" font-size: 1vw;">{{c.Quantity}}</h5>
+    </td>
+    <td> <button class="btn btn-info m-0" (click)="prdDetails(c.id)">details</button> </td>
+    <td> <button class="btn btn-success m-0" (click)="updata(c.id)">updata</button> </td>
+    <td> <button class="btn btn-warning m-0" (click)="deletepro(c.id)">delete</button> </td>
+
+  </tr>
+  <!-- </div> -->
+
+</table>
+
+
+
+
+<a class="nav-link" routerLink="/product/add" routerLinkActive="active">
+  <button class="btn btn-primary"> add product </button>
+</a>

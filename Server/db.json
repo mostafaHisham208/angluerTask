@@ -1,0 +1,123 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "Name": "s7pro",
+      "Price": "50",
+      "Quantity": 3,
+      "Img": "assets/mobile1.jpg",
+      "CateogryID": "1",
+      "discount": 0,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "mobile"
+    },
+    {
+      "id": 2,
+      "Name": "radio headphone ",
+      "Price": "50",
+      "Quantity": 1,
+      "Img": "assets/headphone1.jpg",
+      "CateogryID": "3",
+      "discount": 20,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "smw"
+    },
+    {
+      "id": 3,
+      "Name": "lg watch",
+      "Price": "60",
+      "Quantity": 3,
+      "Img": "assets/smartwatch1.jpg",
+      "CateogryID": "2",
+      "discount": 20,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "hph"
+    },
+    {
+      "id": 4,
+      "Name": "apple watch",
+      "Price": "20",
+      "Quantity": 1,
+      "Img": "assets/smartwatch2.jpg",
+      "CateogryID": "2",
+      "discount": 0,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "mobile"
+    },
+    {
+      "id": 5,
+      "Name": "oppo f9",
+      "Price": "50",
+      "Quantity": 0,
+      "Img": "assets/mobile2.jpg",
+      "CateogryID": "1",
+      "discount": 15,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "hph"
+    },
+    {
+      "id": 6,
+      "Name": "sony headphone",
+      "Price": "60",
+      "Quantity": 3,
+      "Img": "assets/headphone2.jpg",
+      "CateogryID": "3",
+      "discount": 0,
+      "serialnum": 1234567890123456,
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis nulla? Corporis, ullam ducimus. Ea ut porro ad cupiditate quas facere, error consequuntur voluptates laboriosam eum sint nostrum magni accusantium",
+      "Cateogry1": "hph"
+    },
+    {
+      "id": 101,
+      "Name": "tablet s5",
+      "Price": "70",
+      "Quantity": 3,
+      "CateogryID": "1",
+      "Img": "assets/img1.jpg",
+      "serialnum": 1234567891234567,
+      "Cateogry1": "mobile",
+      "discount": 0
+    },
+    {
+      "CateogryID": "1",
+      "Name": "oppo-s7",
+      "Price": "100",
+      "Quantity": 4,
+      "Img": "assets/mobile1.jpg",
+      "id": 102
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "mobile"
+    },
+    {
+      "id": 2,
+      "name": "smartwatch"
+    },
+    {
+      "id": 3,
+      "name": "headphone"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "mostafa",
+      "lastName": "hisham",
+      "email": "mostafa@gmailcom",
+      "address": {
+        "city": "cairo",
+        "posatlcode": "aaaaa",
+        "street": "ssss"
+      },
+      "password": "12345678"
+    }
+  ]
+}
+

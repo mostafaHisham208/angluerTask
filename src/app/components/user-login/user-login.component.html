@@ -1,0 +1,29 @@
+<div class="m-5" >
+  <form (ngsubmit)="checkuser()">
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="emailId">Email</label>
+      <div class="col-md-8">
+        <input  class="form-control" id="emailId" type="email" name="email"
+         />
+
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="passwordId">Password</label>
+      <div class="col-md-8">
+        <input class="form-control" id="passwordId" type="password" placeholder="Password (required)"
+          name="password" />
+        <span class="invalid-feedback">
+        </span>
+
+      </div>
+    </div>
+    <button type="submit" class="btn btn-info" (click)="adminbord()"  [hidden]="user" >login admin</button>
+
+    <button type="submit" class="btn btn-info" (click)="loginfun()"  [hidden]="user" >login</button>
+    <button class="btn btn-warning" (click)="logoutfun()" [hidden]="!user">logout</button>
+
+  </form>
+
+
+</div>

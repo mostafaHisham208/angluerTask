@@ -1,0 +1,116 @@
+<!-- <div class="d-flex justify-content-center">
+  <img src="assets/logo.jpg" alt="" width="50px" height="60px" *ngIf="showImage">
+  <div *ngIf="IsPurshased" class="text-primary display-4">Thanks for purchasing from our Store </div>
+</div> -->
+<div class="d-flex justify-content-start">
+  <h3>Sort from A To z:</h3>
+  <button class="border-0" style="background-color: white;"><i class="fa-solid fa-arrow-up-a-z"
+      style="color:blue;font-size: 33px;" (click)="sortPrd()"></i></button>
+</div>
+<!-- <button class="btn btn-primary mb-3" (click)="toggleImage()">Image</button> -->
+<!-- <div class=" mb-3 p-3  bg-info"> -->
+<!-- <div class="col-md-4"><input type="text" class="form-control" [value]="listFilterchild" [(ngModel)]="listFilterchild" ></div> -->
+<div id="all">
+
+  <div class="col-md-4 d-flex">
+    <select class="form-control" [value]="listFilterchild" [(ngModel)]="listFilterchild">
+
+      <ng-container *ngFor="let c of filteredProducts">
+        <!-- [value]="c.CateogryID" -->
+        <option [value]="c.CateogryID">{{c.Cateogry1}}</option>
+
+      </ng-container>
+    </select>
+    <select class="form-control" [value]="listFilterchild" [(ngModel)]="listFilterchild">
+
+      <ng-container *ngFor="let c of filteredProducts">
+        <!-- [value]="c.CateogryID" -->
+        <option [value]="c.Name">{{c.Name}}</option>
+        <!-- <option [value]="x.catogeryname" >{{x.catogeryname}}</option> -->
+
+      </ng-container>
+    </select>
+  </div>
+
+  <!-- [(ngModel)]="listFilter"  -->
+  <!-- <div class="col-md-6">
+     <h4>Filtering value filter by name: {{listFilter}}</h4>
+  </div> -->
+
+  <!-- </div> -->
+
+  <div class="row  justify-content-center">
+    <div class="col-lg-3 sm-8   m-3 p-0  justify-content-between" id="cardstyle" *ngFor="let c of filteredProducts"
+      [class.text-warning]="c.Quantity>1||c.Quantity<1" [class.text-primary]="c.Quantity==1">
+      <ng-container>
+        <!-- *ngIf="show" -->
+
+        <img [src]='c.Img' alt="" width="100%" height="60%" ImagesStyle raduison="0%" raduisout="20%">
+
+      </ng-container>
+      <div class="p-3">
+        <div class="d-flex justify-content-between">
+      <h1 style="font-size: 1.5vw;">{{c.Name |uppercase}}</h1>
+      <button class="btn btn-info m-0" (click)="prdDetails(c.id)">details</button>
+    </div>
+      <div class="d-flex my-2 justify-content-between">
+
+
+        <h4 style="font-size: 1vw;">EGP{{c.Price|discount:c.discount}}.00  </h4>
+
+        <ng-container *ngIf="c.discount>0;else outOfstockElem">
+
+          <h5 style="text-decoration: line-through; font-size: 1vw;">{{c.Price|currency:'EGP'}}</h5>
+
+        </ng-container>
+        <ng-template #outOfstockElem>
+          <h4></h4>
+        </ng-template>
+        <button class="btn btn-primary m-0" [disabled]="c.Quantity==0" (click)="toggleImage()"
+        (click)="decrease(c.id)">buy</button>
+      </div>
+
+
+      <div class="d-flex ">
+
+        <ng-container *ngIf="c.discount>0;else outOfstockElem">
+
+          <h6 style="font-size: 0.9vw;"> We offer an explicit discount of: {{c.discount}}%</h6>
+
+        </ng-container>
+        <ng-template #outOfstockElem>
+          <h4 style="text-decoration: line-through; font-size: 0.8vw;"></h4>
+        </ng-template>
+
+
+      </div>
+      <ng-container [ngSwitch]="c.CateogryID">
+        <ng-container *ngSwitchCase="1">mobile</ng-container>
+        <ng-container *ngSwitchCase="2">smartwatch</ng-container>
+        <ng-container *ngSwitchCase="3">headphone</ng-container>
+      </ng-container>
+     <div class="d-flex justify-content-between">
+      <h4 style="font-size: 1vw;">{{c.serialnum|format}}</h4>
+      <button class="btn btn-primary m-0" [disabled]="c.Quantity==0">add to cart <i class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i></button>
+    </div>
+
+      <div class="d-flex justify-content-end">
+        <div class="d-flex">
+          <ng-container [ngSwitch]="c.Quantity">
+            <ng-container *ngSwitchCase="1">last 1 item</ng-container>
+            <ng-container *ngSwitchCase="2">last 2 items</ng-container>
+          </ng-container>
+
+
+        </div>
+
+      </div>
+
+      <!-- (click)="toggleImage(c.ID)" -->
+
+      <!-- switch(statement){case 1: } -->
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,140 @@
+<div class="m-5 w-50">
+  <form [formGroup]="UserRegistrationForm">
+    <div class="form-group row mb-2">
+      <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+      <div class="col-md-8">
+        <input formControlName="firstName" type="text" class="form-control" id="firstName" name="fname" />
+
+
+
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+      <div class="col-md-8">
+        <input formControlName="lastName" class="form-control" id="lastNameId" type="text" name="lname"/>
+
+
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="emailId">Email</label>
+      <div class="col-md-8">
+        <input formControlName="email" class="form-control" id="emailId" type="email" name="email" />
+
+      </div>
+    </div>
+
+    <!-- <div formArrayName="phone">
+      <div *ngFor="let add of phone.controls;let i=index">
+        <div class="form-group row mb-2 col-md-8" [formGroupName]="i">
+           phone number:
+            <input formControlName="phone" class="form-control" id="phone" type="text" />
+          <button type="button" class="btn btn-primary" (click)="removephone(i)">remove</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addphone()">Add phone</button> -->
+
+
+    <div formGroupName="passwordGroup">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="passwordId">Password</label>
+        <div class="col-md-8">
+          <input class="form-control" id="passwordId" type="password" placeholder="Password (required)"
+            formControlName="password" name="password" />
+          <!-- <span class="invalid-feedback">
+            {{passwordMessage}}
+          </span> -->
+
+        </div>
+      </div>
+
+      <!-- only rehandle brackets -->
+      <!-- <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="confirmpasswordId">Confirm Password</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="confirmpasswordId"
+                 type="password"
+                 placeholder="Confirm Password (required)"
+                 formControlName="confirmPassword"
+                 [ngClass]="{'is-invalid': UserRegistrationForm.get('passwordGroup')?.errors ||
+                                           ((UserRegistrationForm.get('passwordGroup.confirmPassword')?.touched ||
+                                            UserRegistrationForm.get('passwordGroup.confirmPassword')?.dirty) &&
+                                            !UserRegistrationForm.get('passwordGroup.confirmPassword')?.valid) }"  name="confirmpassword"/>
+          <span class="invalid-feedback">
+            <span *ngIf="UserRegistrationForm.get('passwordGroup.confirmPassword')?.errors?.['required']">
+
+              please enter your confirm password
+            </span>
+
+            <span *ngIf="UserRegistrationForm.get('passwordGroup')?.errors?.['match']">
+
+              The confimation password not match password address
+            </span>
+          </span>
+            </div>
+      </div>
+        -->
+
+
+    </div>
+
+    <!-- <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="passwordId">Password</label>
+      <div class="col-md-8">
+        <input formControlName="password" class="form-control" id="passwordId" type="password" />
+
+
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="confirmpasswordId">Confirm Password</label>
+      <div class="col-md-8">
+        <input formControlName="confirmPassword" id="confirmpasswordId" type="password" class="form-control" />
+      </div>
+    </div> -->
+
+
+
+    Address:
+    <div formGroupName="address">
+      <div>
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="city">city</label>
+          <div class="col-md-8">
+            <input type="text" formControlName="city" class="form-control" id="city">
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="street">street</label>
+          <div class="col-md-8">
+            <input type="text" formControlName="street" class="form-control" id="street">
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="postalcode">postalcode</label>
+          <div class="col-md-8">
+            <input type="text" formControlName="postalcode" class="form-control" id="postalcode">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!UserRegistrationForm.valid">Submit</button>
+  </form>
+</div>
+
+<div class="text-primary">
+  <h3>for test</h3>
+  <div>
+    {{UserRegistrationForm.value| json}}
+  </div>
+
+</div>

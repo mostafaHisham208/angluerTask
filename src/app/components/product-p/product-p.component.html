@@ -1,0 +1,52 @@
+<div class=" mb-3 p-3  bg-info">
+  <div class="col-md-4 "><input type="text"  class="form-control" [(ngModel)]="listFilter"></div>
+
+
+
+</div>
+<!-- <div>
+  <table [(ngModel)]="listFilterchild">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>Quantity</th>
+      <th>delete</th>
+    </tr>
+    <tr *ngFor="let c of prd">
+      <td></td>
+    </tr>
+  </table>
+</div> -->
+<app-product-list  [listFilterchild]="listFilter"></app-product-list>
+
+
+
+<div class="row">
+
+  <ng-container *ngFor="let product of prds">
+
+    <div class="col-sm-4">
+      <img [src]="product.Img" class="img-fluid" alt="Image" ImgStyle="30px" radius1="20px">
+      <h4>{{product.Name | uppercase}}</h4>
+      <div>
+        <h5 class="text-decoration-line-through">{{product.Price|currency:'USD':'symbol'}}</h5>
+        <h5>{{product.Price|currency:'USD':'symbol'}}</h5>
+      </div>
+      <div>
+        <ng-container [ngSwitch]="product.CateogryID">
+          <ng-container *ngSwitchCase="1">Tables</ng-container>
+          <ng-container *ngSwitchCase="2">Chairs</ng-container>
+          <ng-container *ngSwitchCase="3">TV Units</ng-container>
+
+        </ng-container>
+      </div>
+
+      <div>
+        <ng-container *ngIf="product.Quantity>0;else outOfstockElem">In Stock</ng-container>
+        <ng-template #outOfstockElem>Out Of Stock</ng-template>
+      </div>
+      <button class="btn btn-danger" [disabled]="product.Quantity==0">Add to cart<i
+          class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i></button>
+    </div>
+  </ng-container>
+</div>
